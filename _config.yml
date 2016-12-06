@@ -42,4 +42,4 @@ algolia:
   read_only_api_key: '0a2ed90722eaf657219beb2d9d312cc3'
   excluded_files:
     - 404.html
-    - index.html
+   # - index.html
