@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Welcome Texas!
+title: This is dummy post !
 author:
   login: gaetan
   email: gaetan@algolia.com
