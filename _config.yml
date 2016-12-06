@@ -7,9 +7,9 @@ permalink:        pretty
 #relative_permalinks: true
 
 # Setup
-title:            Hyde
-tagline:          'A Jekyll theme, with instant search'
-description:      'The popular <a href="http://hyde.getpoole.com/" target="_blank">Hyde theme</a> for <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, now with instant-search capabilities. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> and <a href="https://www.algolia.com/" target="_blank">Algolia</a>'
+title:            myWiki
+tagline:          'Ananda Theerthan Wiki, with instant search'
+description:      'MyWiki contains informations on technology items.'
 url:              https://github.com/algolia/algoliasearch-jekyll-hyde
 baseurl:          https://anandatheerthan.github.io/galeej2.github.io
 # Travis will install Bundler dependencies in ./vendor, so we need to exclude it
