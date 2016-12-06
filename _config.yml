@@ -9,7 +9,7 @@ permalink:        pretty
 # Setup
 title:            myWiki
 tagline:          'Ananda Theerthan Wiki, with instant search'
-description:      '#NewsAggregation#Blog#SAP#PHP'
+description:      '#NewsAggregation#Blog#'
 url:              https://github.com/algolia/algoliasearch-jekyll-hyde
 baseurl:          https://anandatheerthan.github.io/galeej2.github.io
 # Travis will install Bundler dependencies in ./vendor, so we need to exclude it
