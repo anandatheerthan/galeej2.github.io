@@ -1,0 +1,9 @@
+---
+layout: post
+title: How to schedule and run a program in background
+date: 2013-06-06 23:54
+author: administrator
+comments: true
+categories: [ABAP, SAP]
+---
+<pre>form run_in_background.<br/>data:seltab  type rsparams occurs 0 with header line,<br/>jobnumber type tbtcjob-jobcount,<br/>jobname   type tbtcjob-jobname value sy-repid,<br/>print_parameters type pri_params.<br/>check sy-batch is initial.<br/>call function 'RS_REFRESH_FROM_SELECTOPTIONS'<br/>exporting<br/>curr_report     = sy-repid<br/>tables<br/>selection_table = seltab<br/>exceptions<br/>not_found       = 1<br/>no_report       = 2<br/>others          = 3.<br/>"it shouldn't be possible to have an exception here!<br/>call function 'JOB_OPEN'<br/>exporting<br/>jobname          = jobname<br/>importing<br/>jobcount         = jobnumber<br/>exceptions<br/>cant_create_job  = 1<br/>invalid_job_data = 2<br/>jobname_missing  = 3<br/>others           = 4.<br/>if sy-subrc &lt;&gt; 0.<br/>message 'Can''t create a new job' type 'E'.<br/>else.<br/>submit (sy-repid) with selection-table seltab<br/>via job jobname number jobnumber and return.<br/>if sy-subrc &lt;&gt; 0.<br/>message 'Error adding a step for background execution' type 'E'.<br/>else.<br/>call function 'JOB_CLOSE'<br/>exporting<br/>jobcount             = jobnumber<br/>jobname              = jobname<br/>strtimmed            = 'X'<br/>exceptions<br/>cant_start_immediate = 1<br/>invalid_startdate    = 2<br/>jobname_missing      = 3<br/>job_close_failed     = 4<br/>job_nosteps          = 5<br/>job_notex            = 6<br/>lock_failed          = 7<br/>others               = 8.<br/>if sy-subrc &lt;&gt; 0.<br/>message 'Can''t close the new job' type 'E'.<br/>else.<br/>message 'Background processing successfully scheduled' type 'S'.<br/>endif.<br/>endif.<br/>endif.<br/>leave program.<br/>endform.                    "run_in_background</pre>
