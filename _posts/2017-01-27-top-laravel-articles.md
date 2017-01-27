@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 83 Top Laravel Articles in 2016: What You Clicked in Newsletters
-date: 2017-01-27 23:38
+title: Top Laravel Articles
+date: 2017-01-27 14:38
 author: administrator
 comments: true
 categories: [Laravel]
